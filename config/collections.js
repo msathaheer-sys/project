@@ -1,4 +1,4 @@
-module.exports={
-    PRODUCT_COLLECTION:'Product',
-    USER_COLLECTION:'user'
+module.exports = {
+    PRODUCT_COLLECTION: 'Product',
+    USER_COLLECTION: 'user'
 }

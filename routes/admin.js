@@ -6,9 +6,9 @@ var productHelper = require('../helpers/product-helpers');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  productHelper.getAllProduct().then((products)=>{    
-  res.render('admin/view-products', { admin: true, products });
-  });  
+  productHelper.getAllProduct().then((products) => {
+    res.render('admin/view-products', { admin: true, products });
+  });
 });
 
 router.get('/add-product', function (req, res) {
@@ -28,5 +28,18 @@ router.post('/add-product', (req, res) => {
     });
   });
 });
+
+router.get('/delete-product/:id', (req, res) => {
+  let prodId = req.params.id;
+  console.log(prodId);
+  productHelpers.deleteProduct(prodId).then((response) => {
+    res.redirect('/admin/');
+  })
+})
+// router.get('/delete-product/',(req,res)=>{
+// let proId=req.query.id;
+// console.log(proId);
+// console.log(req.query.name);
+// })
 
 module.exports = router;

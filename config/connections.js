@@ -1,9 +1,9 @@
 const mongoClient = require('mongodb').MongoClient;
-const state = { db: null }
+const state = { db: null };
 
 module.exports.connect = (done) => {
-    const url = 'mongodb://localhost:27017'
-    const dbName = 'Shopping'
+    const url = 'mongodb://localhost:27017';
+    const dbName = 'Shopping';
 
     try {
         const client = new mongoClient(url);
